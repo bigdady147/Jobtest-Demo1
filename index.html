@@ -37,7 +37,8 @@
                                 <a id="nav-link" class="nav-link" aria-current="page" href="#">Khóa học</a>
                             </li>
                             <li class="nav-item">
-                                <a id="nav-link" class="nav-link" aria-current="page" href="#">Thông tin hướng nghiệp</a>
+                                <a id="nav-link" class="nav-link" aria-current="page" href="#">Thông tin hướng
+                                    nghiệp</a>
                             </li>
                             <li class="nav-item">
                                 <a id="nav-link" class="nav-link" href="#">Online fairs</a>
@@ -49,13 +50,13 @@
 
                         </ul>
                         <!-- <form class="d-flex" role="search"> -->
-                            <div class="nav-right d-flex m-lg-3 me-auto mb-2 mb-lg-0">
-                                <i class="fa-solid fa-cart-circle-arrow-down"></i>
-                                <i class="fa-solid fa-earth-americas"></i>
-                                <p>Doanh nghiệp</p>
-                                <p>Đăng nhập</p>
-                            </div>
-                            <button class="btn btn-outline-success" type="submit">TEST MIỄN PHÍ</button>
+                        <div class="nav-right d-flex m-lg-3 me-auto mb-2 mb-lg-0">
+                            <i class="fa-solid fa-cart-circle-arrow-down"></i>
+                            <i class="fa-solid fa-earth-americas"></i>
+                            <p>Doanh nghiệp</p>
+                            <p>Đăng nhập</p>
+                        </div>
+                        <button class="btn btn-outline-success" type="submit">TEST MIỄN PHÍ</button>
                         <!-- </form> -->
                     </div>
                 </div>
@@ -290,32 +291,27 @@
     // });
     function hiddenBackdrop() {
         const poster = document.getElementById('poster');
-        poster.style.display = 'none';
+        poster.style.opacity = '0';
     }
-    // window.addEventListener('scroll', function () {
-    //     if (window.scrollY > 100) {
-    //         const nav = document.getElementById('navbar');
-    //         const navLink = document.querySelector('#nav-link');
-    //         nav.style = 'position:fixed; background: #fff' ;
-    //         navLink.style = 'color: #000 !important;'
-            
-    //     }else {
-    //         const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 100) {
+            const nav = document.getElementById('navbar');
+            const navLink = document.querySelectorAll('#nav-link');
+            const navArr = [...navLink];
+            navArr.forEach(e => {
+                e.style.color = 'red !important';
+            })
+            nav.style = 'position:fixed; background: rgb(115 189 212);z-index:1';
+            // navLink.style = 'color: #000 !important;'
+        } else {
+            const nav = document.getElementById('navbar');
 
-    //         nav.style = 'position:fixed; background: none' ;
-    //         const navLink = document.querySelector('#nav-link');
-    //         navLink.style = 'color: #fff !important;'
+            nav.style = 'position:fixed; background: none';
+            const navLink = document.querySelector('#nav-link');
 
-    //     }
-    // })
-    // function myFunc(){
-    //         console.log('2222222222');
-    //         var pay = document.getElementById('pay');
-    //         pay.style.display = 'flex';
-    //         pay.style.transform = 'translateY(-94px)';
-    //         pay.style.transform = 'translateY(-94px)';
-    //         // pay.style = 'color: red; background: blue';
-    //     }
+        }
+    })
+    
 </script>
 
 </html>
